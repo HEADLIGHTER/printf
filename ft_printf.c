@@ -10,7 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(const char *, ...)
+int	ft_printf(const char *say_the_line_JC)
 {
+	const char	*line;
+
+	line = ft_strdup(say_the_line_JC);
 
 }
