@@ -6,7 +6,7 @@
 /*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 17:36:10 by bbellatr          #+#    #+#             */
-/*   Updated: 2021/07/12 14:11:23 by bbellatr         ###   ########.fr       */
+/*   Updated: 2021/07/12 16:03:18 by bbellatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "printf.h"
@@ -19,4 +19,5 @@ int	ft_printf(const char *say_the_line_JC)
 	va_arg	args;
 
 	what_a_shame = ft_strdup(say_the_line_JC);
+	va_start(args, what_a_shame);
 }
