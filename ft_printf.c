@@ -63,7 +63,7 @@ static int	chrstr(char c, va_list args, size_t *count)
 	return (0);
 }
 
-static int	deinui(char c, va_list args, count)
+static int	deinui(char c, va_list args, size_t *count)
 {
 	char	*strn;
 	if (c == 'd' || c == 'i')
