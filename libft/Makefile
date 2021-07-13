@@ -5,41 +5,39 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/12 15:37:03 by bbellatr          #+#    #+#              #
-#    Updated: 2021/07/12 15:59:35 by bbellatr         ###   ########.fr        #
+#    Created: 2021/07/14 00:22:44 by bbellatr          #+#    #+#              #
+#    Updated: 2021/07/14 00:22:44 by bbellatr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libft.a
+
 CC = gcc
 CC_F = -Wall -Werror -Wextra
-HEADERS = ft_printf.h
+HEADERS = libft.h
 
-SRCS = ft_printf.c ft_printf_utils.c ft_uitoa,c
+SRCS = ft_atoi.c ft_calloc.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+ft_isdigit.c ft_isprint.c ft_itoa.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
+ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c \
+ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c \
+ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
+ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
 OBJS = $(SRCS:.c=.o)
 
-LIBFT = libft
-ARFLAGS = rc
-
 .PHONY: all clean fclean re
 
-%.o : %.c $(HEADERS) Makefile
-	$(CC) $(CCF) -c $< -o $(<:.c=.o)
-
-$(NAME): $(LIBFT) $(OBJS) $(HEADER) Makefile
-	make -C libft
-	ar rc libft/libft.a $(OBJS)
-	cp libft/libft.a $(NAME)
+%.o : %.c $(HEADERS)
+	$(CC) $(CC_F) -c $< -o $@
+$(NAME):$(OBJS)
+	ar -rcs $(NAME) $?
 
 all: $(NAME)
 
 clean:
-	make clean -C libft
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 
 fclean: clean
-	make fclean -C libft
 	rm -f $(NAME)
 
 re: fclean all
