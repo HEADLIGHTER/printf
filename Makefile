@@ -15,7 +15,7 @@ CC = gcc
 CC_F = -Wall -Werror -Wextra
 HEADERS = ft_printf.h
 
-SRCS = ft_printf.c ft_printf_utils.c ft_uitoa,c
+SRCS = ft_printf.c ft_printf_utils.c ft_uitoa.c
 
 OBJS = $(SRCS:.c=.o)
 
