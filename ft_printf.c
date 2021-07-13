@@ -9,7 +9,7 @@
 /*   Updated: 2021/07/12 16:03:18 by bbellatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
+#include "ft_printf.h"
 
 static void	write_char(char c, size_t *count)
 {
