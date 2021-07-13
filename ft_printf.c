@@ -22,7 +22,7 @@ static int	hexpeps(char c, va_list args, size_t *count)
 	if (c == '%')
 	{
 		*count += 1;
-		write(1, '%', 1);
+		write(1, "%", 1);
 	}
 	else if (c == 'x' || c == 'X')
 	{
