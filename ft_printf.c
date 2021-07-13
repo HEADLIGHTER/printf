@@ -84,14 +84,12 @@ static int	deinui(char c, va_list args, size_t *count)
 		return (1);
 	return (0);
 }
-
-int	ft_printf(const char *say_the_line_JC, ...)
+//say the line JC
+int	ft_printf(const char *what_a_shame, ...)
 {
-	const char	*what_a_shame;
 	va_list		args;
 	size_t		count;
 
-	what_a_shame = ft_strdup(say_the_line_JC);
 	va_start(args, what_a_shame);
 	count = 0;
 	while (*what_a_shame && what_a_shame)
