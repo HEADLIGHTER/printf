@@ -75,7 +75,7 @@ static int	deinui(char c, va_list args, count)
 	}
 	else if (c == 'u')
 	{
-		strn = uitoa(va_arg(args, unsigned int));
+		strn = ft_uitoa(va_arg(args, unsigned int));
 		*count += ft_strlen(strn);
 		ft_putstr(strn);
 		free(strn);
