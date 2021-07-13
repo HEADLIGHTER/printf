@@ -51,7 +51,7 @@ static int	chrstr(char c, va_list args, size_t *count)
 			return (1);
 		}
 		*count += ft_strlen(strn);
-		printstr(strn);
+		ft_putstr(strn);
 	}
 	else if (c == 'c')
 	{
@@ -70,14 +70,14 @@ static int	deinui(char c, va_list args, count)
 	{
 		strn = ft_itoa(va_arg(args, int));
 		*count += ft_strlen(strn);
-		printstr(strn);
+		ft_putstr(strn);
 		free(strn);
 	}
 	else if (c == 'u')
 	{
 		strn = uitoa(va_arg(args, unsigned int));
 		*count += ft_strlen(strn);
-		printstr(strn);
+		ft_putstr(strn);
 		free(strn);
 	}
 	if (c == 'd' || c == 'i' || c == 'u')
