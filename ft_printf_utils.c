@@ -45,7 +45,7 @@ void	pnull(size_t *count)
 	*count += 6;
 }
 
-void	pout(void *arg, char *base, size_t count)
+void	pout(void *arg, char *base, size_t *count)
 {
 	size_t	i;
 	size_t	sarg;
