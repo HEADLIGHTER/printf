@@ -6,7 +6,7 @@
 /*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 23:14:18 by bbellatr          #+#    #+#             */
-/*   Updated: 2021/07/13 23:14:18 by bbellatr         ###   ########.fr       */
+/*   Updated: 2021/07/14 14:32:06 by bbellatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	dtohex(unsigned int n, char *base, size_t *count)
 		write(1, base + i, 1);
 		*count += 1;
 	}
-
 	else if (n >= 0 && n < 16)
 	{
 		i = n % 16;

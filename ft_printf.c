@@ -6,7 +6,7 @@
 /*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 17:36:10 by bbellatr          #+#    #+#             */
-/*   Updated: 2021/07/12 16:03:18 by bbellatr         ###   ########.fr       */
+/*   Updated: 2021/07/14 14:31:35 by bbellatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -40,7 +40,7 @@ static int	hexpeps(char c, va_list args, size_t *count)
 
 static int	chrstr(char c, va_list args, size_t *count)
 {
-	char *strn;
+	char	*strn;
 
 	if (c == 's')
 	{
@@ -66,6 +66,7 @@ static int	chrstr(char c, va_list args, size_t *count)
 static int	deinui(char c, va_list args, size_t *count)
 {
 	char	*strn;
+
 	if (c == 'd' || c == 'i')
 	{
 		strn = ft_itoa(va_arg(args, int));
@@ -84,6 +85,7 @@ static int	deinui(char c, va_list args, size_t *count)
 		return (1);
 	return (0);
 }
+
 //say the line JC
 int	ft_printf(const char *what_a_shame, ...)
 {

@@ -6,7 +6,7 @@
 /*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 23:54:32 by bbellatr          #+#    #+#             */
-/*   Updated: 2021/07/13 23:54:32 by bbellatr         ###   ########.fr       */
+/*   Updated: 2021/07/14 14:32:42 by bbellatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -16,7 +16,7 @@ static int	sl(unsigned int n)
 	int	i;
 
 	i = 0;
-	while(n)
+	while (n)
 	{
 		n / 10;
 		i++;
