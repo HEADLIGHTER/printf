@@ -13,8 +13,7 @@
 
 static void	write_char(char c, size_t *count)
 {
-	write(1, &c, 1);
-	*count += 1;
+	*count += write(1, &c, 1);
 }
 
 static int	hexpeps(char c, va_list args, size_t *count)
@@ -33,9 +32,6 @@ static int	hexpeps(char c, va_list args, size_t *count)
 	}
 	else if (c == 'p')
 		pout(va_arg(args, void *), "0123456789abcdef", count);
-	if (c == '%' || c == 'x' || c == 'X' || c == 'p')
-		return (1);
-	return (0);
 }
 
 static int	chrstr(char c, va_list args, size_t *count)
@@ -58,9 +54,6 @@ static int	chrstr(char c, va_list args, size_t *count)
 		*count += 1;
 		ft_putchar_fd(va_arg(args, int), 1);
 	}
-	if (c == 'c' || c == 's')
-		return (1);
-	return (0);
 }
 
 static int	deinui(char c, va_list args, size_t *count)
@@ -81,9 +74,6 @@ static int	deinui(char c, va_list args, size_t *count)
 		ft_putstr(strn);
 		free(strn);
 	}
-	if (c == 'd' || c == 'i' || c == 'u')
-		return (1);
-	return (0);
 }
 
 //say the line JC
@@ -99,10 +89,9 @@ int	ft_printf(const char *what_a_shame, ...)
 		if (*what_a_shame == '%')
 		{
 			what_a_shame++;
-			if (!hexpeps(*what_a_shame, args, &count) && \
-					!chrstr(*what_a_shame, args, &count) && \
-					!deinui(*what_a_shame, args, &count))
-				write_char(*what_a_shame, &count);
+			hexpeps(*what_a_shame, args, &count);
+			chrstr(*what_a_shame, args, &count);
+			deinui(*what_a_shame, args, &count);
 		}
 		else
 			write_char(*what_a_shame, &count);
@@ -110,6 +99,5 @@ int	ft_printf(const char *what_a_shame, ...)
 			what_a_shame++;
 	}
 	va_end(args);
-	free((char *)what_a_shame);
 	return (count);
 }

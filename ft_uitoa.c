@@ -18,7 +18,7 @@ static int	sl(unsigned int n)
 	i = 0;
 	while (n)
 	{
-		n / 10;
+		n /= 10;
 		i++;
 	}
 	if (i == 0)
