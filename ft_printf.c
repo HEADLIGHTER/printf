@@ -48,7 +48,7 @@ static int	chrstr(char c, va_list args, size_t *count)
 		if (strn == NULL)
 		{
 			pnull(count);
-			return (1);
+			return ;
 		}
 		*count += ft_strlen(strn);
 		ft_putstr(strn);

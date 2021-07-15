@@ -54,5 +54,6 @@ char	*ft_uitoa(unsigned int n)
 	if (!str)
 		return (NULL);
 	rec(&str, n);
+	*str = '\0'
 	return (str - strl);
 }
