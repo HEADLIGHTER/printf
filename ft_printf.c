@@ -34,7 +34,7 @@ static int	hexpeps(char c, va_list args, size_t *count)
 		pout(va_arg(args, void *), "0123456789abcdef", count);
 }
 
-static int	chrstr(char c, va_list args, size_t *count)
+static void	chrstr(char c, va_list args, size_t *count)
 {
 	char	*strn;
 
@@ -56,7 +56,7 @@ static int	chrstr(char c, va_list args, size_t *count)
 	}
 }
 
-static int	deinui(char c, va_list args, size_t *count)
+static void	deinui(char c, va_list args, size_t *count)
 {
 	char	*strn;
 
