@@ -16,7 +16,7 @@ static void	write_char(char c, size_t *count)
 	*count += write(1, &c, 1);
 }
 
-static int	hexpeps(char c, va_list args, size_t *count)
+static void	hexpeps(char c, va_list args, size_t *count)
 {
 	if (c == '%')
 	{
